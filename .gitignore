@@ -7,3 +7,9 @@
 /build
 /captures
 .externalNativeBuild
+/.idea/
+app/libs/
+inject-annotation/libs/
+inject-compiler/libs/
+inject/libs/
+inject/src/main/res/drawable/
