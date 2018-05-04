@@ -4,12 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Inject.iml" filepath="$PROJECT_DIR$/Inject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject/inject.iml" filepath="$PROJECT_DIR$/inject/inject.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject/inject.iml" filepath="$PROJECT_DIR$/inject/inject.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject-annotation/inject-annotation.iml" filepath="$PROJECT_DIR$/inject-annotation/inject-annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject-annotation/inject-annotation.iml" filepath="$PROJECT_DIR$/inject-annotation/inject-annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject-compiler/inject-compiler.iml" filepath="$PROJECT_DIR$/inject-compiler/inject-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject-compiler/inject-compiler.iml" filepath="$PROJECT_DIR$/inject-compiler/inject-compiler.iml" />
     </modules>
   </component>

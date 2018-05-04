@@ -27,7 +27,6 @@ public final class Inject {
         inject(host, view, Finder.VIEW);
     }
 
-    @SuppressWarnings("all")
     private static void inject(Object host, Object source, Finder finder) {
         String className = host.getClass().getName();
         try {
