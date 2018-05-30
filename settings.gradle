@@ -1,1 +1,2 @@
 include ':app', ':inject-annotation', ':inject', ':inject-compiler'
+rootProject.name = 'inject-parent'
