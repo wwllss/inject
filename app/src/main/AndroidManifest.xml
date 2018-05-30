@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SubActivity" />
+        <activity android:name=".InterfaceViewActivity" />
     </application>
 
 </manifest>
