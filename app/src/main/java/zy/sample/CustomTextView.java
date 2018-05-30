@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 
 /**
  * @author zhangyuan
- * @date 2018/5/30.
+ * created on 2018/5/30.
  */
 public class CustomTextView extends AppCompatTextView implements ViewInterface {
     public CustomTextView(Context context) {

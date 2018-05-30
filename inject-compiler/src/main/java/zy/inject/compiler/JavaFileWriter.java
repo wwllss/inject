@@ -11,7 +11,7 @@ import javax.lang.model.element.Modifier;
 
 /**
  * @author zhangyuan
- * @date 2018/5/30.
+ * created on 2018/5/30.
  */
 class JavaFileWriter {
 
