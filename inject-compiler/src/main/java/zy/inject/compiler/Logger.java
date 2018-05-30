@@ -7,11 +7,11 @@ import javax.tools.Diagnostic;
  * @author zhangyuan
  * @date 2018/5/4.
  */
-public class Logger {
+class Logger {
 
     private Messager messager;
 
-    public Logger(Messager messager) {
+    Logger(Messager messager) {
         this.messager = messager;
     }
 
