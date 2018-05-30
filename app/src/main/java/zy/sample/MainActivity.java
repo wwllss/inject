@@ -1,12 +1,11 @@
 package zy.sample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import zy.inject.Injector;
 import zy.inject.annotation.BindView;
-import zy.inject.annotation.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
