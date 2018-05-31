@@ -14,7 +14,6 @@ import java.util.Map;
  * @author zhangyuan
  * created on 2017/7/26.
  */
-
 public final class Injector {
 
     private static final Map<Class<?>, Constructor<?>> BINDINGS = new HashMap<>();
