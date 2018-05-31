@@ -40,6 +40,10 @@ class JavaFileWriter {
         TypeSpec.Builder result = TypeSpec.classBuilder(binding.getBindingClassName().simpleName())
                 .addModifiers(Modifier.PUBLIC)
                 .addField(binding.getTargetType(), "target", Modifier.PRIVATE);
+        ClassViewBinding parentBinding = binding.getParentBinding();
+        if (parentBinding != null) {
+            result.superclass(parentBinding.getBindingClassName());
+        }
         if (binding.isActivity()) {
             result.addMethod(createConstructorForActivity());
         }
@@ -61,8 +65,12 @@ class JavaFileWriter {
                 .addAnnotation(UI_THREAD)
                 .addModifiers(Modifier.PUBLIC)
                 .addParameter(binding.getTargetType(), "target", Modifier.FINAL)
-                .addParameter(VIEW, "source")
-                .addStatement("this.target = target");
+                .addParameter(VIEW, "source");
+        ClassViewBinding parentBinding = binding.getParentBinding();
+        if (parentBinding != null) {
+            builder.addStatement("super(target, source)");
+        }
+        builder.addStatement("this.target = target");
         addBindField(builder);
         return builder.build();
     }

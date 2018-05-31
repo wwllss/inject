@@ -27,6 +27,8 @@ public class ClassViewBinding {
 
     private final Set<FieldViewBinding> fieldViewBindingList;
 
+    private ClassViewBinding parentBinding;
+
     public ClassViewBinding(TypeElement enclosingElement) {
         TypeMirror typeMirror = enclosingElement.asType();
         isActivity = isSubtypeOfType(typeMirror, ACTIVITY_TYPE);
@@ -36,6 +38,14 @@ public class ClassViewBinding {
                 packageName.length() + 1).replace('.', '$');
         bindingClassName = ClassName.get(packageName, className + "_ViewBinding");
         fieldViewBindingList = new LinkedHashSet<>();
+    }
+
+    public ClassViewBinding getParentBinding() {
+        return parentBinding;
+    }
+
+    public void setParentBinding(ClassViewBinding parentBinding) {
+        this.parentBinding = parentBinding;
     }
 
     public Set<FieldViewBinding> getFieldViewBindingList() {

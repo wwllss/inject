@@ -18,7 +18,6 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
-import javax.lang.model.element.Name;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
@@ -66,11 +65,17 @@ public class InjectProcessor extends AbstractProcessor {
             parseBindView(element, classMap);
         }
         for (Map.Entry<TypeElement, ClassViewBinding> entry : classMap.entrySet()) {
-            JavaFile javaFile = new JavaFileWriter(entry.getValue()).generate();
+            TypeElement typeElement = entry.getKey();
+            ClassViewBinding binding = entry.getValue();
+            TypeElement parentType = findParentType(typeElement, classMap);
+            if (parentType != null) {
+                binding.setParentBinding(classMap.get(parentType));
+            }
+            JavaFile javaFile = new JavaFileWriter(binding).generate();
             try {
                 javaFile.writeTo(filer);
             } catch (IOException e) {
-                error("generate file error for " + entry.getKey());
+                error("generate file error for " + typeElement);
             }
         }
         return false;
@@ -116,6 +121,20 @@ public class InjectProcessor extends AbstractProcessor {
             }
         }
         return false;
+    }
+
+    private TypeElement findParentType(TypeElement typeElement, Map<TypeElement, ClassViewBinding> classMap) {
+        TypeMirror type;
+        while (true) {
+            type = typeElement.getSuperclass();
+            if (type.getKind() == TypeKind.NONE) {
+                return null;
+            }
+            typeElement = (TypeElement) ((DeclaredType) type).asElement();
+            if (classMap.containsKey(typeElement)) {
+                return typeElement;
+            }
+        }
     }
 
     static boolean isSubtypeOfType(TypeMirror typeMirror, String otherType) {
