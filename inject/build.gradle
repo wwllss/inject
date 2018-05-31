@@ -30,12 +30,13 @@ android {
 //    userOrg = 'wwllss'
 //    groupId = 'zy.inject'
 //    artifactId = 'injector'
-//    publishVersion = '0.0.1'
+//    publishVersion = '1.0.1'
 //    desc = 'Android view injector'
 //    website = 'https://github.com/wwllss/inject'
 //}
 
 dependencies {
+    api project(':inject-annotation')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

@@ -1,7 +1,6 @@
 package zy.inject;
 
 import android.app.Activity;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.UiThread;
 import android.view.View;
