@@ -5,7 +5,7 @@ apply plugin: 'java-library'
 //    userOrg = 'wwllss'
 //    groupId = 'zy.inject'
 //    artifactId = 'injector-annotation'
-//    publishVersion = '1.1.0'
+//    publishVersion = '1.2.0'
 //    desc = 'Android view injector-annotation'
 //    website = 'https://github.com/wwllss/inject'
 //}

@@ -5,7 +5,7 @@ publish {
     userOrg = 'wwllss'
     groupId = 'zy.inject'
     artifactId = 'injector-compiler'
-    publishVersion = '1.1.0'
+    publishVersion = '1.2.0'
     desc = 'Android view injector-compiler'
     website = 'https://github.com/wwllss/inject'
 }
@@ -14,7 +14,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api 'com.squareup:javapoet:1.10.0'
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
-    implementation project(':inject-annotation')
+    implementation 'zy.inject:injector-annotation:1.2.0'
 }
 
 sourceCompatibility = "1.7"
