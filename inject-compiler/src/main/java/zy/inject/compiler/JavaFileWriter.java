@@ -38,8 +38,8 @@ class JavaFileWriter {
 
     private TypeSpec crateType() {
         TypeSpec.Builder result = TypeSpec.classBuilder(binding.getBindingClassName().simpleName())
-                .addModifiers(Modifier.PUBLIC)
-                .addField(binding.getTargetType(), "target", Modifier.PRIVATE);
+                .addModifiers(Modifier.PUBLIC);
+//                .addField(binding.getTargetType(), "target", Modifier.PRIVATE);
         ClassViewBinding parentBinding = binding.getParentBinding();
         if (parentBinding != null) {
             result.superclass(parentBinding.getBindingClassName());
@@ -70,7 +70,7 @@ class JavaFileWriter {
         if (parentBinding != null) {
             builder.addStatement("super(target, source)");
         }
-        builder.addStatement("this.target = target");
+//        builder.addStatement("this.target = target");
         addBindField(builder);
         return builder.build();
     }
