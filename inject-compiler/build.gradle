@@ -1,14 +1,14 @@
 apply plugin: 'java-library'
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    userOrg = 'wwllss'
-    groupId = 'zy.inject'
-    artifactId = 'injector-compiler'
-    publishVersion = '1.2.0'
-    desc = 'Android view injector-compiler'
-    website = 'https://github.com/wwllss/inject'
-}
+//apply plugin: 'com.novoda.bintray-release'
+//
+//publish {
+//    userOrg = 'wwllss'
+//    groupId = 'zy.inject'
+//    artifactId = 'injector-compiler'
+//    publishVersion = '1.2.1'
+//    desc = 'Android view injector-compiler'
+//    website = 'https://github.com/wwllss/inject'
+//}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
